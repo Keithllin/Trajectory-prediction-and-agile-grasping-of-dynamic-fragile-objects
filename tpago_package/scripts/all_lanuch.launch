@@ -1,0 +1,6 @@
+<launch>
+  <node name="camera_node" pkg="your_camera_package" type="camera_node"/>
+  <node name="yolo_node" pkg="your_yolo_package" type="yolo_detection_node"/>
+  <node name="trajectory_node" pkg="your_trajectory_package" type="trajectory_node"/>
+  <!-- <node name="ur5_moveit" pkg="ur5_moveit_config" type="move_group.launch"/> -->
+</launch>

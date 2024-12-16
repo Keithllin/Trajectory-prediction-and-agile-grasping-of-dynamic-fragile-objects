@@ -1,0 +1,27 @@
+<launch>
+  
+  <!-- robot_ip: IP-address of the robot's socket-messaging server -->
+  <arg name="robot_ip" default="192.168.56.101" doc="IP of the controller"/>
+  <arg name="kinematics_config" default="$(find ur_description)/config/ur5_calibration.yaml"/>
+  <arg name="limited" default="true" doc="If true, limits joint range [-PI, PI] on all joints." />
+  
+  <include file="$(find ur_robot_driver)/launch/ur5_bringup.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)"/>
+    <arg name="kinematics_config" value="$(arg kinematics_config)"/>
+  </include>
+
+  <include file="$(find ur5_moveit_config)/launch/ur5_moveit_planning_execution.launch">
+    <arg name="limited" value="$(arg limited)"/>
+  </include>
+
+  <include file="$(find ur5_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="config" value="true"/>
+  </include>
+  <!-- <node name="ur_move_test_node" pkg="tasks" type="ur_move_test_node.py" respawn="true" output="screen" /> -->
+
+<!-- <include file="$(find easy_handeye)/launch/publish.launch" >
+	<arg name="namespace_prefix" default="ur5_realsense_calibration" />
+    <arg name="eye_on_hand" value="false" />
+</include> -->
+
+</launch>
