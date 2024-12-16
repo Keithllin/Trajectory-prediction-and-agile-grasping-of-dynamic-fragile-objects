@@ -34,9 +34,8 @@ This project integrates computer vision, deep learning, and robotic motion contr
 ```
 Trajectory-Prediction-and-Grasping/
 ├── README.md
-├── src/
-│   └── realsense_example/
-│       └── scripts/
+├── tpago_package/
+│   └── scripts/
 │           ├── 01_YOLO_OD.py
 │           ├── 02_trajetory_pub.py
 │           ├── 03_lstm_trajectory_sub.py
