@@ -183,9 +183,9 @@ class YOLODetectionNode:
 
                         # 转换到基座坐标系
                         x_base, y_base, z_base = self.transform_camera_to_base(x_cam, y_cam, z_cam)
-                        x_base = x_base - 145.341 #标定补偿
-                        y_base = - y_base - 200 #标定补偿
-                        z_base = z_base + 440 #标定补偿
+                        # x_base = x_base - 145.341 #标定补偿
+                        # y_base = - y_base - 200 #标定补偿
+                        # z_base = z_base + 440 #标定补偿
                         base_coordinates.append((-x_base, -y_base, z_base))
                         rospy.loginfo(f"Base coordinates: (x={x_base:.3f}, y={y_base:.3f}, z={z_base:.3f})")
 
